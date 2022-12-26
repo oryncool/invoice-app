@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cards",
+  "info": {
+    "name": "card"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "cards"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "to_do",
+        "in_progress",
+        "done"
+      ]
+    },
+    "time_settings": {
+      "type": "component",
+      "repeatable": true,
+      "component": "timing.timing"
+    }
+  }
+}

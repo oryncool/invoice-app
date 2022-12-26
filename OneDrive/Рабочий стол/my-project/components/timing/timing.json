@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_timing_timings",
+  "info": {
+    "name": "timing",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "expected_time": {
+      "type": "time"
+    },
+    "actual_time": {
+      "type": "time",
+      "required": true
+    },
+    "deadline": {
+      "type": "datetime"
+    }
+  }
+}

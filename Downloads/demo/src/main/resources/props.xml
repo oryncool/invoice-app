@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="myCLI" class="com.example.demo.MyCLI">
+    </bean>
+    <bean id="accountBasicCLI" class="com.example.demo.AccountBasicCLI">
+        <constructor-arg ref="myCLI"/>
+        <constructor-arg ref="bankCore"/>
+        <constructor-arg ref="accountListingServiceImpl"/>
+    </bean>
+    <bean id="accountListingServiceImpl" class="com.example.demo.AccountListingServiceImpl">
+        <constructor-arg ref="memoryAccountDAO"/>
+    </bean>
+    <bean id="accountCreationServiceImpl" class="com.example.demo.AccountCreationServiceImpl">
+        <constructor-arg ref="memoryAccountDAO"/>
+    </bean>
+    <bean id="bankCore" class="com.example.demo.BankCore">
+        <constructor-arg ref="accountCreationServiceImpl"/>
+    </bean>
+    <bean id="memoryAccountDAO" class="com.example.demo.MemoryAccountDAO">
+    </bean>
+    <bean id="cLIUI" class="com.example.demo.CLIUI" abstract="true"/>
+    <bean id="accountDAO" class="com.example.demo.AccountDAO" abstract="true">
+    </bean>
+    <bean id="accountCreationService" class="com.example.demo.AccountCreationService" abstract="true">
+    </bean>
+    <bean id="accountListingService" class="com.example.demo.AccountListingService" abstract="true">
+    </bean>
+</beans>
