@@ -1,0 +1,8 @@
+CREATE TABLE Addresses
+(
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  street NVARCHAR(256),
+  city NVARCHAR(256),
+  post_code NVARCHAR(256),
+  country NVARCHAR(256)
+);

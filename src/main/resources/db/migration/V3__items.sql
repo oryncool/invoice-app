@@ -1,0 +1,8 @@
+CREATE TABLE Items
+(
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  name NVARCHAR(256),
+  quantity NVARCHAR(256),
+  price DOUBLE,
+  total DOUBLE
+);
