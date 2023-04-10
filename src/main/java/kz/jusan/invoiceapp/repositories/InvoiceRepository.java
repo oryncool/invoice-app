@@ -11,6 +11,8 @@ public interface InvoiceRepository extends CrudRepository<Invoice, Integer> {
 
     Invoice findInvoiceById(Integer id);
 
+    Optional<Invoice> findInvoiceByIncrementIdAndUserId(int id, int userId);
+
     @Override
     Optional<Invoice> findById(Integer integer);
 }

@@ -5,7 +5,6 @@ import kz.jusan.invoiceapp.models.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.List;
@@ -17,8 +16,11 @@ import java.util.List;
 @Data
 public class Invoice {
     @Id
+    @Column(name="increment_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int incrementId;
+    @Column(name="id")
+    private String id;
     @Column(name="user_id")
     private int userId;
     @Column(name="created_at")

@@ -1,6 +1,7 @@
 CREATE TABLE Invoices
 (
-    id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    increment_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+    id NVARCHAR(6) NOT NULL,
     user_id INTEGER,
     created_at DATE,
     payment_due DATE,

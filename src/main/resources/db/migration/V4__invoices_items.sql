@@ -1,5 +1,5 @@
 CREATE TABLE invoices_items
 (
-  invoice_id INTEGER,
+  invoice_increment_id INTEGER,
   items_id INTEGER
 );
